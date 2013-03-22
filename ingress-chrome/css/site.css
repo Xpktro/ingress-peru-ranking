@@ -1,0 +1,37 @@
+p {
+    padding: 5px 0;
+    margin:  0;
+}
+
+#mini-notification {
+    display: none;
+    position: fixed;
+    cursor: pointer;
+    width: 100%;
+    background: #0b0c0d;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 1px solid #00c2ff;
+    z-index:9999;
+    color: #00c2ff;
+    -webkit-box-shadow:0 0em 0.5em rgba(0, 0, 0, 0.2);
+    box-shadow:0 0em 0.5em rgba(0, 0, 0, 0.2);
+}
+
+#mini-notification .inner {
+    position: relative;
+    width: 850px;
+    margin:  0 auto;
+    padding-right: 60px;
+}
+
+#mini-notification .close {
+    position: absolute;
+    color: #fff;
+    top: 5px;
+    right: 0;
+}
+
+#mini-notification a.close:hover {
+    text-decoration: underline;
+}

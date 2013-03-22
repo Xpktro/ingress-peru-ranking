@@ -1,21 +1,21 @@
 from os.path import dirname, join, realpath
 
-ROOT_DIR = realpath(join(dirname(__file__), '..', '..'))
 PROJECT_DIR = realpath(join(dirname(__file__), '..'))
+ROOT_DIR = PROJECT_DIR
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+# ('Your Name', 'your_email@example.com'),
 )
 
 MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.',
-        'NAME': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': realpath(join(ROOT_DIR, 'sqlite')) + '/db.sqlite',
         'USER': '',
         'PASSWORD': '',
         'HOST': '',
@@ -31,32 +31,26 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-MEDIA_ROOT = ''
+MEDIA_ROOT = realpath(join(ROOT_DIR, 'media'))
 
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 
-STATIC_ROOT = ''
+STATIC_ROOT = realpath(join(ROOT_DIR, 'static'))
 
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-SECRET_KEY = '9zgl!x_qxg9f2q2s(b#mv24opgn0n*su#(!k$97=i^&amp;h=hoj42'
+SECRET_KEY = '9zgl!x_qxg9f2q2s(bJ*(#*JWsuNCE(#OKidjfios8(#n8f3ns)=hoj42'
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    #     'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -86,11 +80,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    # 'django.contrib.staticfiles',
+    'django.contrib.admin',
+
+    'south',
+
+    'players',
+    'ranking',
 )
 
 LOGGING = {
@@ -113,6 +109,6 @@ LOGGING = {
             'handlers': ['mail_admins'],
             'level': 'ERROR',
             'propagate': True,
-        },
-    }
+            },
+        }
 }

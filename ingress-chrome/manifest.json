@@ -1,0 +1,26 @@
+{
+  "name": "Ingress Perú Ranking",
+  "version": "0.1",
+  "manifest_version": 2,
+
+  "description": "A simple extension to track player's email, level and AP points for the Peruvian Ingress Ranking",
+  "icons": {"512": "img/logo.png"},
+
+  "content_scripts": [
+    {
+      "matches": ["http://www.ingress.com/intel"],
+
+      "js": ["js/jquery.js", "js/miniNotification.js", "js/ranking.js"],
+
+      "css": ["css/site.css"]
+    }
+  ],
+  "permissions": [
+      "tabs", "http://www.ingress.com/*", "http://*/"
+  ],
+
+  "browser_action": {
+    "default_icon": "img/logo.png",
+    "default_popup": "popup.html"
+  }
+}

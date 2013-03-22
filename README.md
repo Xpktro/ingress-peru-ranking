@@ -1,4 +1,4 @@
-django-empty-project
+ingress-peru-ranking
 ====================
 
-My django empty project layout, based on BitZeppelin's intern standards.
+A simple Ingress player ranking for the peruvian enthusiasts!

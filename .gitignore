@@ -8,3 +8,4 @@ local_settings.py
 .settings/*
 *.sublime*
 env/*
+.idea

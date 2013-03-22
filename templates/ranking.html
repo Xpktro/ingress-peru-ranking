@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Coda' rel='stylesheet' type='text/css'>
+    <link href="{{ STATIC_URL }}css/ranking.css" rel="stylesheet">
+  <title>Ingress Peru Top Ranking</title>
+</head>
+<body>
+<div class="wrapper">
+  <p class="text-center">Ingress Perú Top Ranking</p>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Pos</th>
+          <th>Nick</th>
+          <th>Nivel</th>
+          <th>AP</th>
+          <th>Facción</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for player in ranking %}
+          <tr {% if player.faction == 1 %}class="enlightened"{% endif %}>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ player.nickname }}</td>
+          <td>{{ player.level }}</td>
+          <td>{{ player.ap }}</td>
+          <td>{{ player.get_faction_display }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>
