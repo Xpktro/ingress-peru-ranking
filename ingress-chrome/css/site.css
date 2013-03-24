@@ -14,8 +14,8 @@ p {
     border-bottom: 1px solid #00c2ff;
     z-index:9999;
     color: #00c2ff;
-    -webkit-box-shadow:0 0em 0.5em rgba(0, 0, 0, 0.2);
-    box-shadow:0 0em 0.5em rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow:0 0 0.5em rgba(0, 0, 0, 0.2);
+    box-shadow:0 0 0.5em rgba(0, 0, 0, 0.2);
 }
 
 #mini-notification .inner {

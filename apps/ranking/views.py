@@ -13,5 +13,5 @@ from players.models import Player
 
 class RankingView(View):
     def get(self, request, *args, **kwargs):
-        ranking = Player.objects.ranking(0, 20)
+        ranking = Player.objects.ranking(0, 30)
         return render(request, 'ranking.html', {'ranking': ranking})

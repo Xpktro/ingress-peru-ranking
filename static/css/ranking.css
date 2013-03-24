@@ -1,8 +1,26 @@
+.table-container:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+}
+
+.table-container {
+    display: inline-block;
+}
+
+.table-container {
+    display: block;
+    -height: 1px;
+}
+
 body {
-    font-family: 'Coda', monospace;
-    background: #0b0c0d;
-    color: #00c2ff;
-    font-size: 14px;
+    font-family: Coda, monospace;
+    background: #0B0C0D;
+    color: #00C2FF;
+    font-size: 0.9em;
     height: 100%;
 }
 
@@ -15,45 +33,49 @@ body {
 }
 
 p {
-    margin: 20px 0;
+    margin: 0.8em 0;
     text-align: center;
     font-size: 1.25em;
-    font-weight: bold;
+    font-weight: 500;
     text-decoration: underline;
 }
 
 .table-container {
-    border: 2px solid #00c2ff;
+    border: 2px solid #00C2FF;
     border-radius: 10px !important;
-    padding: 1em 1em 0.2em 1em;
-    margin: 0 0.7em 0 0.7em;
-    position: absolute;
-    bottom: 0;
-    top:60px;
+    padding: 0.8em;
+    margin: 0 0.7em 0.7em;
+    position: initial;
+    top: 4.6em;
+    width: auto;
+    height: auto;
 }
 
-table td, th{
-    border-collapse: collapse;
+table td, th {
     text-align: center !important;
-    border-spacing: 0;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
 }
 
-thead {
-    border-spacing: 0;
-}
-
 th {
     font-size: 1.2em;
-    border-bottom: 1px solid #00c2ff !important;
-    border-spacing: 0;
+    border-bottom: 1px solid #00C2FF !important;
+    font-weight: 400;
 }
 
-table tr:first-child td{
+table tr:first-child td {
     padding-top: 0.9em;
 }
 
 .enlightened {
-    color: #28f428;
+    color: #28F428;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.spacer {
+    padding: 0.1em;
 }
