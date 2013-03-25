@@ -11,3 +11,4 @@ env/*
 .idea
 .dotcloud/
 sqlite
+.pem

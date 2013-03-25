@@ -24,7 +24,7 @@ $(document).ready(function() {
         var ap = $('#ap .number').html();
         var email = $('#header_email').html();
         $.post(
-            "http://127.0.0.1:8000/players/",
+            "http://xpktro.alwaysdata.net/players/",
             {
                 'nickname': nickname,
                 'faction': faction,
