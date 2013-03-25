@@ -1,5 +1,5 @@
 #coding:utf8
-from collections import OrderedDict
+from ordereddict import OrderedDict
 import json
 
 from django.http import HttpResponse, HttpResponseBadRequest
