@@ -12,16 +12,37 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': realpath(join(ROOT_DIR, 'sqlite')) + '/db.sqlite',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+
+# Change to False in any non-dotcloud environments
+DOTCLOUD_MODE = False
+
+if DOTCLOUD_MODE:
+    import json
+
+    with open('/home/dotcloud/environment.json') as f:
+        env = json.load(f)
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'ingress',
+            'USER': env['DOTCLOUD_DB_SQL_LOGIN'],
+            'PASSWORD': env['DOTCLOUD_DB_SQL_PASSWORD'],
+            'HOST': env['DOTCLOUD_DB_SQL_HOST'],
+            'PORT': int(env['DOTCLOUD_DB_SQL_PORT']),
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': realpath(join(ROOT_DIR, 'sqlite')) + '/db.sqlite',
+            'USER': '',
+            'PASSWORD': '',
+            'HOST': '',
+            'PORT': '',
+        }
+    }
 
 TIME_ZONE = 'America/Chicago'
 
