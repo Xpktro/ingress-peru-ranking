@@ -1,4 +1,48 @@
-.table-container:after {
+body {
+    font-family: 'Coda', monospace;
+    background: #353535;
+    color: #00c2ff;
+    font-size: 14px;
+    /*height: 100%;*/
+    margin: 0;
+    padding: 0;
+}
+
+#header{
+    background: rgb(65,65,65); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(65,65,65,1) 0%, rgba(33,33,33,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(65,65,65,1)), color-stop(100%,rgba(33,33,33,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(65,65,65,1) 0%,rgba(33,33,33,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(65,65,65,1) 0%,rgba(33,33,33,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(65,65,65,1) 0%,rgba(33,33,33,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(65,65,65,1) 0%,rgba(33,33,33,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414141', endColorstr='#212121',GradientType=0 ); /* IE6-9 */
+
+    border-bottom: 1px solid #000;
+    display: block;
+    height: 48px;
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    box-shadow: 0 2px 2px rgba(0,0,0,.35);
+}
+#header h1{
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 46px;
+    font-size: 1.2em;
+}
+
+.wrapper {
+    margin-top: 50px;
+    padding: 10px;
+}
+
+/*.table-container:after {
     content: ".";
     display: block;
     height: 0;
@@ -14,68 +58,28 @@
 .table-container {
     display: block;
     -height: 1px;
-}
+}*/
 
-body {
-    font-family: Coda, monospace;
-    background: #0B0C0D;
-    color: #00C2FF;
-    font-size: 0.9em;
-    height: 100%;
-}
 
-.wrapper {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}
+table td, 
+      th{   text-align: center !important;  }
 
-p {
-    margin: 0.8em 0;
-    text-align: center;
-    font-size: 1.25em;
-    font-weight: 500;
-    text-decoration: underline;
-}
-
-.table-container {
-    border: 2px solid #00C2FF;
-    border-radius: 10px !important;
-    padding: 0.8em;
-    margin: 0 0.7em 0.7em;
-    position: initial;
-    top: 4.6em;
-    width: auto;
-    height: auto;
-}
-
-table td, th {
-    text-align: center !important;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-}
-
-th {
+table th{
+    border-bottom: 1px solid #00c2ff !important;
     font-size: 1.2em;
-    border-bottom: 1px solid #00C2FF !important;
-    font-weight: 400;
 }
 
-table tr:first-child td {
+/*thead { border-spacing: 0; } */
+
+/*th {
+    font-size: 1.2em;
+    border-bottom: 1px solid #00c2ff !important;
+    border-spacing: 0;
+}*/
+
+/*table tr:first-child td{
     padding-top: 0.9em;
-}
+}*/
 
-.enlightened {
-    color: #28F428;
-}
+.enlightened { color: #28f428; }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.spacer {
-    padding: 0.1em;
-}
